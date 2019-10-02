@@ -230,7 +230,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
               options: config.get<Object>('options', {}),
               run: config.get('run', 'onType'),
               workspaceFolder: getWorkspaceFolder(uri),
-              workingDirectory: undefined,
+              workingDirectory: config.get<DirectoryItem>('workingDirectory'),
               codeAction: {
                 disableRuleComment: config.get('codeAction.disableRuleComment', { enable: true, location: 'separateLine' as 'separateLine' }),
                 showDocumentation: config.get('codeAction.showDocumentation', { enable: true })
